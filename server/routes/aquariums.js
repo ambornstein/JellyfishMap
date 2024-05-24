@@ -4,7 +4,7 @@ import express from "express";
 import db from "../db/connection.js";
 
 // This help convert the id from string to ObjectId for the _id.
-import { ObjectId } from "mongodb";
+import { ObjectId, Timestamp } from "mongodb";
 
 // router is an instance of the express router.
 // We use it to define our routes.
@@ -21,13 +21,14 @@ router.get("/", async (req, res) => {
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
   let collection = await db.collection("locations");
-  let query = { _id: new ObjectId(req.params.id) };
+  let query = { "_id" : new ObjectId(req.params.id) };
   let result = await collection.findOne(query);
 
   if (!result) res.send("Not found").status(404);
   else res.send(result).status(200);
 });
 
+/*
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
   try {
@@ -80,5 +81,6 @@ router.delete("/:id", async (req, res) => {
     res.status(500).send("Error deleting record");
   }
 });
+*/
 
 export default router;
