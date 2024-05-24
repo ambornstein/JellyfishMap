@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState } from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import geoJson from "./aquariums.json";
 import ReviewPage from './ReviewPage';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW1ib3Juc3RlaW4iLCJhIjoiY2x3ajhnYjBjMHk1cDJrbXdjZHdqaWZ3cyJ9._K7RJ6SvA6Tg2VtuZjfCig';
@@ -18,7 +17,7 @@ export default function App() {
     async function fetchData() {
       const response = await fetch(
         `http://localhost:5050/record/`
-      );
+      ).catch((error) => { console.log("Failed to fetch locations") } );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
         console.error(message);
@@ -43,16 +42,16 @@ export default function App() {
             setZoom(map.current.getZoom().toFixed(2));
           });
         map.current.on('load', async () => {
-          let response = await fetchData()
-          console.log(response)
-          response.map((feature) =>
-            new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).setPopup(
-              new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML(
-                  `<h3>${feature.properties.name}</h3><p>${feature.properties.address}</p><a href="/pages/1">Review</Link>`
-                )
-            ).addTo(map.current)
-          )
+          await fetchData().then( (features) =>
+            features.map((feature) =>
+              new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                  .setHTML(
+                    `<h3>${feature.properties.name}</h3><p>${feature.properties.address}</p><a href="/pages/1">Review</Link>`
+                  )
+              ).addTo(map.current)
+            )
+          ).catch((error) => { return Promise.reject() })
           });
       });
       
