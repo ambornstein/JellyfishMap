@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.get("/:id", async (req, res) => {
     let collection = await db.collection("reviews")
-    let query = { "_id" : new ObjectId(req.params.id) };
-    let result = await collection.findMany(query);
+    let query = { "locationId" : new ObjectId(req.params.id) };
+    let result = await collection.find(query).toArray();
 
     if (!result) res.send("Not found").status(404);
     else res.send(result).status(200);
@@ -24,7 +24,7 @@ router.post("/:id", async (req, res) => {
 try {
     let newReview = {
     name: "Theresa",
-    timestamp: new Timestamp(),
+    timestamp: Date.now(),
     content: req.body.reviewContent,
     ovrRating: req.body.ovrRating,
     jellyRating: req.body.jellyRating,

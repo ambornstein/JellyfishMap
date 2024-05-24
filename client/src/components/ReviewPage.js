@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react"
 import Rating from "react-rating"
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
+import Review from "./Review";
 
 export default function ReviewPage() {
     let params = useParams();
     let [ovrRating, setOvrRating] = useState(0)
     let [jellyRating, setJellyRating] = useState(0)
     let [reviewContent, setReviewContent] = useState("")
+    let [reviewList, setReviewList] = useState([])
 
     let [record, setRecord] = useState({
         _id: "",
@@ -34,10 +36,22 @@ export default function ReviewPage() {
             }
             console.log(record)
             setRecord(record);
+
+            const reviews = await fetch(`${baseUrl}/reviews/${params.id.toString()}`);
+            if (!reviews.ok) {
+                throw new Error(`HTTP error! status: ${reviews.status}`);
+            }
+            const reviewSet = await reviews.json();
+            if (!reviewSet) {
+                console.warn(`Record with id ${id} not found`);
+                return;
+            }
+
+            console.log(reviewSet)
+            setReviewList(reviewSet.reverse())
         }
-    
         fetchData()
-      }, [params, setRecord]);
+    }, [params, setRecord, setReviewList, reviewList]);
 
       async function onSubmit(e) {
         e.preventDefault();
@@ -66,6 +80,11 @@ export default function ReviewPage() {
                     <label>Quality</label><Rating isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating}/>
                     <button type="submit">Submit Review</button>
                 </form>
+                {reviewList.map((review, index) => {
+                    const timestamp = new Date(review.timestamp)
+                    console.log(review.timestamp)
+                    return (<Review props={review} key={index} date={timestamp.toString()}/>)
+                })}
             </div>
         </>
     )
