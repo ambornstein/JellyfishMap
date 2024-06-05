@@ -21,23 +21,22 @@ router.get("/:id", async (req, res) => {
 });
   
 router.post("/:id", async (req, res) => {
-try {
-    let newReview = {
-    name: "Theresa",
-    timestamp: Date.now(),
-    content: req.body.reviewContent,
-    ovrRating: req.body.ovrRating,
-    jellyRating: req.body.jellyRating,
-    locationId: new ObjectId(req.params.id)
+    try {
+        let newReview = {
+            name: "Theresa",
+            timestamp: Date.now(),
+            content: req.body.reviewContent,
+            ovrRating: req.body.ovrRating,
+            jellyRating: req.body.jellyRating,
+            locationId: new ObjectId(req.params.id)
+        }
+        let collection = await db.collection("reviews")
+        let result = await collection.insertOne(newReview)
+        res.send(result).status(204);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send("Error adding record");
     }
-    let collection = await db.collection("reviews")
-    let result = await collection.insertOne(newReview)
-    res.send(result).status(204);
-} catch (err) {
-    console.error(err);
-    res.status(500).send("Error adding record");
-}
-
 });
 
 export default router;
