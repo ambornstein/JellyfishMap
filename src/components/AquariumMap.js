@@ -56,7 +56,7 @@ export default function AquariumMap() {
     fetchLocationData().then((feature) => {
       feature.map((feature) => {
         const popup = new mapboxgl.Popup({ offset: 25 }) // add popups
-          .setHTML(`<h3>${feature["Museum Name"]}</h3><p>${feature["Street Address (Administrative Location)"]}</p><a href="/pages/${feature._id}">Review</a><Rating/>`)
+          .setHTML(`<h3>${feature.properties.name}</h3><p>${feature.properties.address}</p><a href="/pages/${feature._id}">Review</a><Rating/>`)
 
         popup.on('open', async () => {
           const popupContent = popup.getElement().getElementsByClassName("mapboxgl-popup-content")[0];
@@ -79,7 +79,7 @@ export default function AquariumMap() {
           }
         });
 
-        return new mapboxgl.Marker().setLngLat([feature.Longitude, feature.Latitude]).setPopup(popup).addTo(map.current)
+        return new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).setPopup(popup).addTo(map.current)
       });
     })
   }, [lat, lng, zoom]);

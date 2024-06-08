@@ -12,7 +12,7 @@ const multer = Multer({
   })
   
   let projectId = "aquarium-jellyfish-ratings";
-  let keyFilename = "\key.json";
+  let keyFilename = "key.json";
   const storage = new Storage({
     projectId,
     keyFilename
