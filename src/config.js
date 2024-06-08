@@ -1,1 +1,1 @@
-export const baseUrl = "http://server-5i7hp45fea-ue.a.run.app:8080";
+export const baseUrl = "https://server-5i7hp45fea-ue.a.run.app:8080";
