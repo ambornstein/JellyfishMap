@@ -3,7 +3,6 @@ import Rating from "react-rating"
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
 import Review from "./Review";
-import { Slide } from "react-slideshow-image";
 import ImageCarousel from "./ImageCarousel";
 
 
@@ -81,7 +80,6 @@ export default function ReviewPage() {
                 setBannerLinks(out[1].flat())
             })
         }
-        
     }
 
     function handleChange(event) {

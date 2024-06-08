@@ -1,1 +1,1 @@
-export const baseUrl = "http://localhost:5050";
+export const baseUrl = "http://server-5i7hp45fea-ue.a.run.app:8080";

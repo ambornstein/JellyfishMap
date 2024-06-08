@@ -1,7 +1,7 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const uri = "mongodb+srv://amborn02:kqGQwjxmrRrKVWWy@cluster0.qq9w1kr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const client = new MongoClient(uri, {
+const uri = "mongodb+srv://amborn02:o9a2zuk9H4dGK556@cluster1.gw0b0jk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1";
+const client = await MongoClient.connect(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -11,7 +11,6 @@ const client = new MongoClient(uri, {
 
 try {
   // Connect the client to the server
-  await client.connect();
   // Send a ping to confirm a successful connection
   await client.db("admin").command({ ping: 1 });
   console.log(
