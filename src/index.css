@@ -1,93 +1,112 @@
-  html {
-    background-color: #fff5ee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+html {
+  background-color: #fff5ee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-  .review-container {
-    margin: auto;
-    margin-top: 30px;
-    width: 60vw;
-    border: 4px solid rgb(35 55 75 / 90%);
-  }
-
-  .review-content {
-    padding: 35px 0px;
-    margin: auto;
-    width: 70%;
-  }
-
-  .review-form {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-evenly;
-    height: 350px;
-  }
+.slide-container {
+  margin-top: 30px;
   
-  button {
-    background-color: #FD7066;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 4ms;
-  }
+}
 
-  label {
-    margin-top: 10px;
-  }
+.carousel.carousel-slider {
+  margin: auto !important; 
+  background-color: #bea6a6 !important;
+}
 
-  .rating {
-    margin: 10px
-  }
+.review-container {
+  margin: auto;
+  margin-top: 20px;
+  width: 60vw;
+  border: 4px solid rgb(35 55 75 / 90%);
+}
 
-  button:hover {
-    background-color: #DD98AB;
-  }
-  
-  .review-form textarea{
-    width: 90%;
-    height: 100px;
-  }
-  
-  .review {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    border: 2px groove rgb(35 55 75 / 90%);
-    border-radius: 10px;
-    margin: 20px;
-    padding: 10px;
-  }
+.review-content {
+  padding: 20px 0px;
+  margin: auto;
+  width: 70%;
+}
 
-  .aquarium-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://www.cabq.gov/artsculture/biopark/images/aquarium-banner.jpg/@@images/image.jpeg");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 300px;
-  }
+.review-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  height: 350px;
+}
 
-  .map-container {
-    margin: 150px;
-    border: 4px solid rgb(35 55 75 / 90%);
-    height: 60vh;
-  }
-  
-  .sidebar {
-    background-color: rgb(35 55 75 / 90%);
-    color: #fff;
-    padding: 6px 12px;
-    font-family: monospace;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 12px;
-    border-radius: 4px;
-  }
+button {
+  background-color: #FD7066;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 4ms;
+}
+
+label {
+  margin-top: 10px;
+}
+
+.rating {
+  margin: 10px
+}
+
+button:hover {
+  background-color: #DD98AB;
+}
+
+.review-form textarea {
+  width: 90%;
+  height: 100px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  border: 2px groove rgb(35 55 75 / 90%);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.map-container {
+  margin: 150px;
+  border: 4px solid rgb(35 55 75 / 90%);
+  height: 60vh;
+}
+
+.sidebar {
+  background-color: rgb(35 55 75 / 90%);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}

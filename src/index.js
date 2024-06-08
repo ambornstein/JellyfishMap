@@ -7,8 +7,6 @@ import App from './App';
 const uri = "mongodb+srv://amborn02:kqGQwjxmrRrKVWWy@cluster0.qq9w1kr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );

@@ -3,6 +3,9 @@ import Rating from "react-rating"
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
 import Review from "./Review";
+import { Slide } from "react-slideshow-image";
+import ImageCarousel from "./ImageCarousel";
+
 
 export default function ReviewPage() {
     let params = useParams();
@@ -11,6 +14,7 @@ export default function ReviewPage() {
     let [reviewContent, setReviewContent] = useState("")
     let [reviewList, setReviewList] = useState([])
     let [imageFile, setImageFile] = useState();
+    let [bannerLinks, setBannerLinks] = useState([])
 
     let [record, setRecord] = useState({
         _id: "",
@@ -28,6 +32,9 @@ export default function ReviewPage() {
 
             fetch(`${baseUrl}/reviews/${params.id.toString()}`)
             .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
+
+            fetch(`${baseUrl}/upload/${params.id.toString()}`)
+            .then((res) => res.json()).then((links) => setBannerLinks(links))
         }
     }, []);
 
@@ -49,50 +56,63 @@ export default function ReviewPage() {
         e.preventDefault()
 
         let inputFile = imageFile
-        let blob = inputFile.slice(0, inputFile.size, "image/jpg");
+        if (inputFile) {
+            let blob = inputFile.slice(0, inputFile.size, "image/jpg");
 
-        let newFile = new File([blob], `2009090s.jpeg`, { type: "image/jpeg" });
-        let formData = new FormData();
-        formData.append("imgfile", newFile);
+            let newFile = new File([blob], inputFile.name, { type: "image/jpeg" });
+            let formData = new FormData();
+            formData.append("imgfile", newFile);
 
-        fetch(`${baseUrl}/upload`, {
-            method: "POST",
-            body: formData,
-        }).then((res) => res.text()).then((x) =>  alert(x + "ful image upload"))
+            const upload = fetch(`${baseUrl}/upload/${params.id.toString()}`, {
+                method: "POST",
+                body: formData,
+            }).then((res) => res.text())
+
+            const getImages = fetch(`${baseUrl}/upload/${params.id.toString()}`)
+                .then((res) => res.json())
+
+            Promise.all([upload, getImages]).then((out) => {
+                alert(out[0] + "ful upload");
+                setBannerLinks(out[1].flat())
+            })
+        }
+        
     }
 
     function handleChange(event) {
         event.preventDefault()
         setImageFile(event.target.files[0])
-      }
+    }
 
-    return (
+    return ( 
         <>
-            <div className="review-container">
-                <div className="aquarium-banner" />
-                <div className="review-content">
-                    <p>Upload aquarium photos</p>
-                    <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
-                    <button onClick={uploadImage}>Upload</button>
-                    <h2>{record.properties.name}</h2>
-                    <h3>{record.properties.address}</h3>
-                    <form onSubmit={onSubmit} >
-                        <div className="review-form">
-                            <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
-                            <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
-                            <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
-                            <button type="submit">Submit Review</button>
-                        </div>
-                    </form>
-                    <div className="reviews">
-                        {reviewList.map((review, index) => {
-                            const timestamp = new Date(review.timestamp)
-                            return (<Review props={review} key={index} date={timestamp.toString()} />)
-                        })}
+        <div className="slide-container">
+            <ImageCarousel links={bannerLinks}/>
+        </div>
+        <div className="review-container">
+            
+            <div className="review-content">
+                <p>Upload aquarium photos</p>
+                <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
+                <button onClick={uploadImage}>Upload</button>
+                <h2>{record.properties.name}</h2>
+                <h3>{record.properties.address}</h3>
+                <form onSubmit={onSubmit} >
+                    <div className="review-form">
+                        <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
+                        <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
+                        <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
+                        <button type="submit">Submit Review</button>
                     </div>
+                </form>
+                <div className="reviews">
+                    {reviewList.map((review, index) => {
+                        const timestamp = new Date(review.timestamp)
+                        return (<Review props={review} key={index} date={timestamp.toString()} />)
+                    })}
                 </div>
             </div>
+        </div>
         </>
     )
-
 }
