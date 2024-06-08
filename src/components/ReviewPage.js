@@ -50,6 +50,11 @@ export default function ReviewPage() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+
+        let getReviews = await fetch(`${baseUrl}/reviews/${params.id.toString()}`)
+        .then((res) => res.json())
+
+        Promise.all([response, getReviews]).then((resolutions) => setReviewList(resolutions[1].flat().reverse()));
     }
 
     function uploadImage(e) {
