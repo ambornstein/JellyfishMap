@@ -9,7 +9,6 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW1ib3Juc3RlaW4iLCJhIjoiY2x3ajhnYjBjMHk1cDJrb
 export default function AquariumMap() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [features, setFeature] = useState([])
   const [lng, setLng] = useState(-70.9);
   const [lat, setLat] = useState(42.35);
   const [zoom, setZoom] = useState(9);
@@ -85,7 +84,9 @@ export default function AquariumMap() {
   }, [lat, lng, zoom]);
 
   return (
-    <div>
+    <div className="main-page">
+      <div className="img-container">
+      </div>
       <div ref={mapContainer} className="map-container">
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}

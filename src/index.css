@@ -1,16 +1,53 @@
 html {
-  background-color: #fff5ee;
+  background-color: #9bdcde;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+}
+
+.login-box {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background-color: #1D538F;
+}
+
+.img-container {
+  position: absolute;
+  background-image: url(/public/jellies.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 99;
+  pointer-events: none;
+  width: 100vw;
+  height: 60vh;
+}
+
+.nav-container {
+  margin: 30px;
+  background-color: #273155;
+  padding: 20px;
+}
+
+.nav-container > a{
+  font-size: large;
+  color: #DD98AB;
+  padding-right: 50px;
 }
 
 .slide-container {
   margin-top: 30px;
-  
 }
 
 .carousel.carousel-slider {
   margin: auto !important; 
-  background-color: #bea6a6 !important;
+  background-color: #1D538F !important;
 }
 
 .review-container {
@@ -93,7 +130,8 @@ button:hover {
 }
 
 .map-container {
-  margin: 150px;
+  align-self: 3/2;
+  margin: 50px 100px;
   border: 4px solid rgb(35 55 75 / 90%);
   height: 60vh;
 }

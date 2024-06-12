@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import Rating from "react-rating"
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
 import Review from "./Review";
 import ImageCarousel from "./ImageCarousel";
 
-
-export default function ReviewPage() {
+export default function ReviewPage({authed}) {
+    
     let params = useParams();
     let [ovrRating, setOvrRating] = useState(0)
     let [jellyRating, setJellyRating] = useState(0)
@@ -14,6 +14,8 @@ export default function ReviewPage() {
     let [reviewList, setReviewList] = useState([])
     let [imageFile, setImageFile] = useState();
     let [bannerLinks, setBannerLinks] = useState([])
+
+    console.log(authed)
 
     let [record, setRecord] = useState({
         _id: "",
@@ -95,18 +97,26 @@ export default function ReviewPage() {
         <div className="review-container">
             
             <div className="review-content">
-                <p>Upload aquarium photos</p>
-                <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
-                <button onClick={uploadImage}>Upload</button>
+                {authed &&
+                <>
+                    <p>Upload aquarium photos</p>
+                    <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
+                    <button onClick={uploadImage}>Upload</button>
+                </>
+                }
                 <h2>{record.properties.name}</h2>
                 <h3>{record.properties.address}</h3>
                 <form onSubmit={onSubmit} >
+                {authed &&
+                <>
                     <div className="review-form">
                         <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
                         <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
                         <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
                         <button type="submit">Submit Review</button>
                     </div>
+                    </>
+                }
                 </form>
                 <div className="reviews">
                     {reviewList.map((review, index) => {
