@@ -1,22 +1,86 @@
+/* General */
+
 html {
-  background-color: #9bdcde;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: auto;
+  background-image: linear-gradient(to bottom right, #1D538F, #9BDCDE);
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
+
+a {
+  font-size: large;
+  color: #9BDCDE;
+  margin: 30px;
+  font-size: large;
+}
+
+label {
+  color: #9BDCDE;
+  width: auto;
+}
+
+button {
+  background-color: #FD7066;
+  border-radius: 7px;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 4ms;
+}
+
+button:hover {
+  background-color: #DD98AB;
+}
+
+/* Login */
 
 .login-box {
   vertical-align: middle;
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: center;
   padding: 20px;
   margin: auto;
   width: 400px;
   height: 400px;
-  background-color: #1D538F;
-  
+  background-color: ghostwhite;
 }
 
-.wave::before {
+.login-box > label {
+  float: left;
+  color: midnightblue;
+  width: 80%;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.login-box > input {
+  width: 80%;
+  height: 20px;
+}
+
+.login-box > button {
+  color: midnightblue;
+  margin: auto;
+  text-align: center;
+  margin-top: 40px;
+  width: 40%;
+}
+
+.login-box > h3 {
+  font-size: 32px;
+}
+
+#root::before {
   content: "";
   position: absolute;
   left: 0;
@@ -28,7 +92,7 @@ html {
   background-image: radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
 }
 
-.wave::after{
+#root::after{
   content: "";
   position: absolute;
   left: 0;
@@ -40,162 +104,137 @@ html {
   background-image: radial-gradient(circle at 10px 15px, #fff 12px, transparent 13px);
 }
 
-.login-box > label {
-  padding-top: 10px;
-  color: black;
-  font-size: 24px;
-}
-
-.login-box > input {
-  padding-top: 10px;
-  width: 360px;
-  height: 20px;
-}
-
-.login-box > button {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 24px;
-  padding-top: 10px;
-  width: 360px;
-}
-
-.login-box > h3 {
-  font-size: 32px;
-}
-
 .img-container {
   position: absolute;
-  background-image: url(/public/jellies.png);
-  background-size: contain;
+  background-image: url(/public/jelly1.png), url(/public/jelly2.png), url(/public/jelly3.png), url(/public/jelly2.png);
+  background-size: 20%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top left,
+  top right ,
+  bottom right,
+  bottom left;
   z-index: 99;
   pointer-events: none;
-  width: 100vw;
-  height: 60vh;
+  margin: auto;
+  width: 50%;
+  aspect-ratio: 3/2;
 }
 
+/* Navbar */
+
 .nav-container {
-  display: block;
+  border-radius: 12px;
   margin: 30px;
   height: 70px;
   background-color: #273155;
 }
 
 .nav-container > ul {
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
   list-style-type: none;
+  height: 70px;
   margin: 0;
   padding: 0;
 }
 
-li > a  {
-  margin-right: 20px;
-  margin-left: 50px;
-  top: 50%;
-  transform: translateY(90%);
-  float: left;
-}
-
-a, label {
-  font-size: large;
-  color: #DD98AB;
-}
-
-.slide-container {
-  margin-top: 30px;
-}
-
-.carousel.carousel-slider {
-  margin: auto !important; 
-  background-color: #1D538F !important;
-}
-
-.review-container {
+/* Map */
+.main-page {
+  width: 50%;
   margin: auto;
-  margin-top: 20px;
-  width: 60vw;
-  border: 4px solid rgb(35 55 75 / 90%);
-}
-
-.review-content {
-  padding: 20px 0px;
-  margin: auto;
-  width: 70%;
-}
-
-.review-form {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-evenly;
-  height: 350px;
-}
-
-button {
-  background-color: #FD7066;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  margin: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 4ms;
-}
-
-label {
-  margin-top: 10px;
-}
-
-.rating {
-  margin: 10px
-}
-
-button:hover {
-  background-color: #DD98AB;
-}
-
-.review-form textarea {
-  width: 90%;
-  height: 100px;
-}
-
-.review {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  border: 2px groove rgb(35 55 75 / 90%);
-  border-radius: 10px;
-  margin: 20px;
-  padding: 10px;
-}
-
-.each-slide-effect > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: contain;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 600px;
-}
-
-.each-slide-effect span {
-  padding: 20px;
-  font-size: 20px;
-  background: #efefef;
-  text-align: center;
 }
 
 .map-container {
-  align-self: 3/2;
-  margin: 50px 100px;
+  margin: auto;
   border: 4px solid rgb(35 55 75 / 90%);
-  height: 60vh;
+  aspect-ratio: 3/2;
+}
+
+/* Mobile Sizing Overrides*/
+
+@media (min-width: 320px) and (max-width: 999px) {
+
+  .nav-container {
+    margin: 0;
+  }
+
+  .main-page {
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+  }
+
+  .review-container {
+    width: 90%;
+  }
+
+  .review-content {
+    width: 80%;
+  }
+
+  .carousel-wrapper{
+    max-width: 100%;
+  }
+
+  .slide-container {
+    width: 90%;
+  }
+
+  .review-content {
+    width: 90%;
+    padding: 5px 0px;
+  }
+
+
+  .carousel {
+    height: 30vh;
+  }
+
+  .each-slide-effect {
+    height: 200px;
+  }
+
+  .img-container {
+    width: 90%;
+  }
+  
+  li > a {
+    margin: 10px;
+    font-size: medium;
+  }
+
+  li > label {
+    margin-left: 10%;
+    width: auto;
+    font-size: 12px;
+  }
+
+  li > button {
+    width: 30%;
+    font-size: small;
+  }
+
+  .login-box {
+    width: inherit;
+  }
+}
+
+@media (min-width: 1000px) {
+
+  .slide-container {
+    width: 80%;
+  }
+
+  .review-container {
+    width: 60%;
+  }
+
+  .review-content {
+    width: 70%;
+    padding: 20px 0px;
+  }
 }
 
 .sidebar {

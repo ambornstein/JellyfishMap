@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
 import Review from "./Review";
 import ImageCarousel from "./ImageCarousel";
+import "../reviewpage.css"
 
 export default function ReviewPage() {
 

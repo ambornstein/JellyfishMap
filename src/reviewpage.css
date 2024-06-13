@@ -1,0 +1,62 @@
+.slide-container {
+  margin-top: 30px;
+  margin: auto;
+}
+
+.carousel.carousel-slider {
+  margin: auto !important;
+  background-color: #1D538F !important;
+}
+
+.review-container {
+  margin: auto;
+  margin-top: 20px;
+  border: 4px solid rgb(35 55 75 / 90%);
+}
+
+.review-content {
+  margin: auto;
+}
+
+.review-form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-evenly;
+  height: 350px;
+}
+
+.rating {
+  margin: 10px
+}
+
+.review-form textarea {
+  width: 90%;
+  height: 100px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  border: 2px groove rgb(35 55 75 / 90%);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.each-slide-effect>div {
+  display: flex;
+  background-size: contain;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
