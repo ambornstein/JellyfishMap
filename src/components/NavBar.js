@@ -20,16 +20,21 @@ export default function NavBar() {
 
     return (
         <div className="nav-container">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            {authed ?
-                <>
-                    <p>Logged in as theresajyhe@gmail.com</p>
-                    <button onClick={() => {
-                        localStorage.removeItem("userInfo")
-                        window.dispatchEvent(new Event('storage'))
-                    }}>Log Out</button>
-                </> : <a href='/login'>Login</a>}
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li style={{"float":"right"}}>
+                    {authed ?
+                        <>
+                            <label>Logged in as theresajyhe@gmail.com</label>
+                            <button onClick={() => {
+                                localStorage.removeItem("userInfo")
+                                window.dispatchEvent(new Event('storage'))
+                            }}>Log Out</button>
+                        </> 
+                    : <a href='/login'>Login</a>}
+                </li>
+            </ul>
         </div>
     )
 }

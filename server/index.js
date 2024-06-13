@@ -23,11 +23,10 @@ app.listen(port, () => {
 });
 
 app.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  console.log(req.query.email)
 
-
-  const collection = await db.collection("locations");
-  const userWithEmail = await collection.findOne({ "email": email }).catch(
+  const collection = await db.collection("users");
+  const userWithEmail = await collection.findOne({ "email": req.query.email }).catch(
     (err) => console.log("Error: ", err))
 
   if (!userWithEmail)
@@ -35,10 +34,12 @@ app.post("/login", async (req, res) => {
       .status(400)
       .json({ message: "No user found with email!" })
 
-  if (userWithEmail.password !== password)
+  if (userWithEmail.password !== req.query.password) {
+    console.log(userWithEmail.password)
     return res
       .status(400)
       .json({ message: "Email or password does not match!" })
+  }
   else {
     const jwToken = jwt.sign(
       { id: userWithEmail._id, email: userWithEmail.email },

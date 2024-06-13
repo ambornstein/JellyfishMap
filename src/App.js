@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import ReviewPage from './components/ReviewPage';
 import AquariumMap from './components/AquariumMap';
 import NavBar from './components/NavBar';
 import LoginPopup from './components/LoginPage';
-import React, { useEffect, useState } from 'react';
-import { baseUrl } from './config';
+import React from 'react';
 
 export default function App() {
   return (
