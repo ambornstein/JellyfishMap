@@ -5,8 +5,8 @@ import { baseUrl } from "../config";
 import Review from "./Review";
 import ImageCarousel from "./ImageCarousel";
 
-export default function ReviewPage({authed}) {
-    
+export default function ReviewPage() {
+
     let params = useParams();
     let [ovrRating, setOvrRating] = useState(0)
     let [jellyRating, setJellyRating] = useState(0)
@@ -15,7 +15,21 @@ export default function ReviewPage({authed}) {
     let [imageFile, setImageFile] = useState();
     let [bannerLinks, setBannerLinks] = useState([])
 
-    console.log(authed)
+    let [authed, setAuthed] = useState(false)
+
+    useEffect(() => {
+        function handleChange() {
+            let stored = JSON.parse(localStorage.getItem("userInfo"))
+            if (stored) {
+                setAuthed(true)
+            } else {
+                setAuthed(false)
+            }
+        }
+
+        handleChange()
+        window.addEventListener('storage', handleChange)
+    }, [])
 
     let [record, setRecord] = useState({
         _id: "",
@@ -29,13 +43,13 @@ export default function ReviewPage({authed}) {
         const id = params.id?.toString() || undefined;
         if (id) {
             fetch(`${baseUrl}/aquariums/${(id)}`)
-            .then((res) => res.json()).then((data) => setRecord(data));
+                .then((res) => res.json()).then((data) => setRecord(data));
 
             fetch(`${baseUrl}/reviews/${params.id.toString()}`)
-            .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
+                .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
 
             fetch(`${baseUrl}/upload/${params.id.toString()}`)
-            .then((res) => res.json()).then((links) => setBannerLinks(links))
+                .then((res) => res.json()).then((links) => setBannerLinks(links))
         }
     }, []);
 
@@ -53,7 +67,7 @@ export default function ReviewPage({authed}) {
         }
 
         let getReviews = await fetch(`${baseUrl}/reviews/${params.id.toString()}`)
-        .then((res) => res.json())
+            .then((res) => res.json())
 
         Promise.all([response, getReviews]).then((resolutions) => setReviewList(resolutions[1].flat().reverse()));
     }
@@ -89,43 +103,43 @@ export default function ReviewPage({authed}) {
         setImageFile(event.target.files[0])
     }
 
-    return ( 
+    return (
         <>
-        <div className="slide-container">
-            <ImageCarousel links={bannerLinks}/>
-        </div>
-        <div className="review-container">
-            
-            <div className="review-content">
-                {authed &&
-                <>
-                    <p>Upload aquarium photos</p>
-                    <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
-                    <button onClick={uploadImage}>Upload</button>
-                </>
-                }
-                <h2>{record.properties.name}</h2>
-                <h3>{record.properties.address}</h3>
-                <form onSubmit={onSubmit} >
-                {authed &&
-                <>
-                    <div className="review-form">
-                        <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
-                        <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
-                        <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
-                        <button type="submit">Submit Review</button>
+            <div className="slide-container">
+                <ImageCarousel links={bannerLinks} />
+            </div>
+            <div className="review-container">
+
+                <div className="review-content">
+                    {authed &&
+                        <>
+                            <p>Upload aquarium photos</p>
+                            <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
+                            <button onClick={uploadImage}>Upload</button>
+                        </>
+                    }
+                    <h2>{record.properties.name}</h2>
+                    <h3>{record.properties.address}</h3>
+                    <form onSubmit={onSubmit} >
+                        {authed &&
+                            <>
+                                <div className="review-form">
+                                    <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
+                                    <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
+                                    <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
+                                    <button type="submit">Submit Review</button>
+                                </div>
+                            </>
+                        }
+                    </form>
+                    <div className="reviews">
+                        {reviewList.map((review, index) => {
+                            const timestamp = new Date(review.timestamp)
+                            return (<Review props={review} key={index} date={timestamp.toString()} />)
+                        })}
                     </div>
-                    </>
-                }
-                </form>
-                <div className="reviews">
-                    {reviewList.map((review, index) => {
-                        const timestamp = new Date(review.timestamp)
-                        return (<Review props={review} key={index} date={timestamp.toString()} />)
-                    })}
                 </div>
             </div>
-        </div>
         </>
     )
 }

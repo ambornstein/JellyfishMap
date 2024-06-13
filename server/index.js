@@ -39,13 +39,14 @@ app.post("/login", async (req, res) => {
     return res
       .status(400)
       .json({ message: "Email or password does not match!" })
+  else {
+    const jwToken = jwt.sign(
+      { id: userWithEmail._id, email: userWithEmail.email },
+      process.env.JWT_SECRET
+    )
 
-  const jwToken = jwt.sign(
-    { id: userWithEmail._id, email: userWithEmail.email },
-    process.env.JWT_SECRET
-  )
-
-  res.json({ message: "Welcome Back!", token: jwToken })
+    res.json({ message: "Welcome Back!", token: jwToken })
+  }
 })
 
 app.get('/verify', async (req, res) => {
