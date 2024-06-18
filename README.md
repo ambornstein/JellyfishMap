@@ -4,12 +4,12 @@ A project created to host reviews of aquariums all over the US. Each aquarium ca
 ## Screenshots
 
 ## Technologies Used
-Backend: Express.js, Node.js
-Frontend: React.js
-Database: MongoDB
-Authentication: JWT (from scratch)
-Cloud Image Hosting: Google Cloud Buckets, Multer
-Cloud Deployment: Google Cloud Run
+Backend: Express.js, Node.js  
+Frontend: React.js  
+Database: MongoDB  
+Authentication: JWT (from scratch)  
+Cloud Image Hosting: Google Cloud Buckets, Multer  
+Cloud Deployment: Google Cloud Run  
 
 ## Getting Started
 [Hosted Site](https://jellyfishmap-5i7hp45fea-uc.a.run.app/)
