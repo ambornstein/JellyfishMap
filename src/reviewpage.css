@@ -47,7 +47,7 @@
   align-items: baseline;
   border: 2px groove rgb(35 55 75 / 90%);
   border-radius: 10px;
-  margin: 20px;
+  margin: 16px 0px;
   padding: 10px;
 }
 
@@ -78,10 +78,6 @@
 
   .review-container {
     width: 90%;
-  }
-
-  .review-content {
-    width: 80%;
   }
 
   .carousel-wrapper{

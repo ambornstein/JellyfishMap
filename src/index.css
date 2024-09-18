@@ -119,7 +119,7 @@ ul li {
 }
 
 ul li a {
-  height: inherit;
+  height: fit-content;
   color: #9BDCDE;
   font-size: 28px;
   display: inline-block;
@@ -193,7 +193,7 @@ ul li a {
   pointer-events: none;
   margin: auto;
   width: 100%;
-  aspect-ratio: inherit;
+  aspect-ratio: 3/2;
 }
 
 /* Map */
@@ -217,38 +217,63 @@ ul li a {
   font-size: 28px;
 }
 
+#login {
+  float: right;
+}
+
 /* Mobile Sizing Overrides*/
 
 @media (min-width: 320px) and (max-width: 999px) {
 
+  .map-container {
+    margin-top: 16px;
+    width: 80vw;
+    border: 12px solid rgb(255 255 255 / 0.85);
+    aspect-ratio: 1/2;
+  }
+
   .nav-container {
     margin: 0;
   }
+  
+  a {
+    height: 15px;
+  }
 
-  .main-page {
-    width: 90%;
-    margin: auto;
-    margin-top: 25px;
+  p {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+
+  .mapboxgl-popup a {
+    font-size: 22px;
   }
 
   .img-container {
     width: 90%;
-  }
-  
-  li > a {
-    margin: 10px;
-    font-size: medium;
+    aspect-ratio: 1/2;
   }
 
   li > label {
-    margin-left: 10%;
-    width: auto;
+    display: none;
+    white-space: normal;
     font-size: 12px;
   }
 
-  li > button {
-    width: 30%;
-    font-size: small;
+  #login {
+    font-size: 16px;
+    float: left;
   }
 
   .login-box {

@@ -84,14 +84,14 @@ export default function AquariumMap() {
   }, [lat, lng, zoom]);
 
   return (
-    <div className="main-page">
+    <>
       <div ref={mapContainer} className="map-container">
-      <div className="img-container">
-      </div>
+        <div className="img-container">
+        </div>
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>
       </div>
-    </div>
+    </>
   )
 }

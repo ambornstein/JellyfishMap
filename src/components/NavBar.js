@@ -23,7 +23,7 @@ export default function NavBar() {
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                <li style={{ "float": "right" }}>
+                <li id="login">
                     {authed ?
                         <>
                             <label>Logged in as theresajyhe@gmail.com</label>
