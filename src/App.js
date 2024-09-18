@@ -5,12 +5,15 @@ import AquariumMap from './components/AquariumMap';
 import NavBar from './components/NavBar';
 import LoginPopup from './components/LoginPage';
 import React from 'react';
+import './BabyDoll.ttf'
 
 export default function App() {
   return (
     <>
       <Router>
+      <div className='overlay'></div>
         <NavBar/>
+        
         <Routes>
           <Route path='/'
             element={<AquariumMap />}

@@ -6,20 +6,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -149.38716,
-          60.20885
-        ]
-      },
-      "properties": {
-        "name": "ALASKA SEALIFE CENTER",
-        "address": "301 RAILWAY AVENUE - PO BOX 1329"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -110.77773,
           32.19934
         ]
@@ -76,34 +62,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -120.67246,
-          35.15758
-        ]
-      },
-      "properties": {
-        "name": "CENTRAL COAST AQUARIUM SOCIETY",
-        "address": "1435 SHELL BEACH ROAD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -118.42975,
-          34.2011
-        ]
-      },
-      "properties": {
-        "name": "MARINE AQUARIUM SOCIETY OF LOS ANGELES COUNTY",
-        "address": "13620 B SHERMAN WAY"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -117.92329,
           33.67324
         ]
@@ -118,20 +76,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.05583,
-          36.97755
-        ]
-      },
-      "properties": {
-        "name": "MARINE WILDLIFE VETERINARY CARE AND RESEARCH CENTER",
-        "address": "110 SHAFFER ROAD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -121.90177,
           36.61784
         ]
@@ -139,48 +83,6 @@
       "properties": {
         "name": "MONTEREY BAY AQUARIUM",
         "address": "886 CANNERY ROW"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.09198,
-          32.78258
-        ]
-      },
-      "properties": {
-        "name": "SAN DIEGO MARINE AQUARIUM SOCIETY",
-        "address": "8488 SPRECKELS LANE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -122.42854,
-          37.80358
-        ]
-      },
-      "properties": {
-        "name": "SAN FRANCISCO AQUARIUM SOCIETY",
-        "address": "PO BOX 282040"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.22195,
-          32.76104
-        ]
-      },
-      "properties": {
-        "name": "SEAWORLD SAN DIEGO",
-        "address": "500 SEAWORLD DRIVE"
       }
     },
     {
@@ -209,34 +111,6 @@
       "properties": {
         "name": "STEPHEN BIRCH AQUARIUM-MUSEUM",
         "address": "2300 EXPEDITION WAY"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -117.12738,
-          32.57564
-        ]
-      },
-      "properties": {
-        "name": "TIJUANA RIVER NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "301 CASPAIN WAY"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -105.08621,
-          39.80303
-        ]
-      },
-      "properties": {
-        "name": "COLORADO AQUARIUM SOCIETY",
-        "address": "PO BOX 1253"
       }
     },
     {
@@ -328,34 +202,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -80.17338,
-          26.04092
-        ]
-      },
-      "properties": {
-        "name": "GOLD COAST AQUARIUM SOCIETY OF SOUTH FLORIDA",
-        "address": "3186 N 34TH ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.38262,
-          30.19973
-        ]
-      },
-      "properties": {
-        "name": "GUANA TOLOMATO MATANZAS NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "505 GUANA RD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -82.57772,
           27.3337
         ]
@@ -384,90 +230,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -81.70841,
-          26.05139
-        ]
-      },
-      "properties": {
-        "name": "ROOKERY BAY NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "300 TOWER ROAD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.80476,
-          24.55616
-        ]
-      },
-      "properties": {
-        "name": "SAM AND CHRISTINE TROPHIA BUTTERFLY RESEARCH AND EDUCATION CENTER",
-        "address": "PO BOX 6623"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.47165,
-          28.40739
-        ]
-      },
-      "properties": {
-        "name": "SEAWORLD ORLANDO",
-        "address": "7007 SEAWORLD DRIVE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.83776,
-          27.83883
-        ]
-      },
-      "properties": {
-        "name": "SUNCOAST SEABIRD SANCTUARY",
-        "address": "18328 GULF BLVD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.32057,
-          27.86465
-        ]
-      },
-      "properties": {
-        "name": "TAMPA BAY AQUARIUM SOCIETY",
-        "address": "PO BOX 27044"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.53743,
-          28.38311
-        ]
-      },
-      "properties": {
-        "name": "THE SEAS",
-        "address": "2020 N AVENUE OF THE STARS"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -84.39404,
           33.76238
         ]
@@ -475,20 +237,6 @@
       "properties": {
         "name": "GEORGIA AQUARIUM",
         "address": "225 BAKER ST NW"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -157.84398,
-          21.30418
-        ]
-      },
-      "properties": {
-        "name": "HONOLULU AQUARIUM SOCIETY",
-        "address": "PO BOX 235791"
       }
     },
     {
@@ -566,20 +314,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -87.84935,
-          42.0459
-        ]
-      },
-      "properties": {
-        "name": "CHICAGO MARINE AQUARIUM SOCIETY",
-        "address": "2268 WOODVIEW LANE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -87.61907,
           41.86668
         ]
@@ -601,20 +335,6 @@
       "properties": {
         "name": "NATIONAL MISSISSIPPI RIVER MUSEUM & AQUARIUM",
         "address": "120 MAIN STREET"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.61905,
-          41.8675
-        ]
-      },
-      "properties": {
-        "name": "SHEDD AQUARIUM SOCIETY",
-        "address": "1200 S LAKE SHORE DR"
       }
     },
     {
@@ -664,34 +384,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.58628,
-          41.627
-        ]
-      },
-      "properties": {
-        "name": "WAQUOIT BAY NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "PO BOX 3522"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.50539,
-          38.98299
-        ]
-      },
-      "properties": {
-        "name": "CHESAPEAKE BAY VIRGINIA NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "580 TAYLOR AVE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -76.60875,
           39.2866
         ]
@@ -720,34 +412,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -70.25538,
-          43.65408
-        ]
-      },
-      "properties": {
-        "name": "GULF OF MAINE RESEARCH INSTITUTE",
-        "address": "350 COMMERCIAL ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.55512,
-          43.34062
-        ]
-      },
-      "properties": {
-        "name": "WELLS NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "342 LAUDHOLM FARM RD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -86.22867,
           43.21134
         ]
@@ -762,48 +426,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -83.12935,
-          42.5077
-        ]
-      },
-      "properties": {
-        "name": "GREATER DETROIT AQUARIUM SOCIETY",
-        "address": "2101 N VERMONT AVE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -83.37808,
-          42.62511
-        ]
-      },
-      "properties": {
-        "name": "MARINELIFE AQUARIUM SOCIETY OF MICHIGAN",
-        "address": "204 S UNION ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.23436,
-          44.72829
-        ]
-      },
-      "properties": {
-        "name": "MINNESOTA AQUARIUM SOCIETY",
-        "address": "965 BEACON LANE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -93.31933,
           44.9123
         ]
@@ -811,20 +433,6 @@
       "properties": {
         "name": "PANDORAS AQUARIUM",
         "address": "3109 W 50TH ST STE 320"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.2977,
-          44.95261
-        ]
-      },
-      "properties": {
-        "name": "TWIN CITIES MARINE AQUARIUM SOCIETY",
-        "address": "2751 HENNEPIN AVENUE SOUTH PMB 277"
       }
     },
     {
@@ -853,20 +461,6 @@
       "properties": {
         "name": "SEA LIFE AQUARIUM - KANSAS CITY",
         "address": "2475 GRAND BLVD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -90.60302,
-          38.52119
-        ]
-      },
-      "properties": {
-        "name": "WILD CANID SURVIVAL AND RESEARCH CENTER",
-        "address": "PO BOX 760"
       }
     },
     {
@@ -944,34 +538,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.58379,
-          35.82075
-        ]
-      },
-      "properties": {
-        "name": "NORTH CAROLINA AQUARIUM SOCIETY",
-        "address": "3125 POPLARWOOD COURT"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.69304,
-          36.06662
-        ]
-      },
-      "properties": {
-        "name": "NORTH CAROLINA NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "983 W KITTY HAWK RD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -95.92949,
           41.22416
         ]
@@ -979,20 +545,6 @@
       "properties": {
         "name": "OMAHA'S HENRY DOORLY ZOO & AQUARIUM",
         "address": "3701 S 10TH ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -70.89625,
-          43.05403
-        ]
-      },
-      "properties": {
-        "name": "GREAT BAY NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "89 DEPOT RD"
       }
     },
     {
@@ -1049,62 +601,6 @@
       "properties": {
         "name": "BROOKLYN AQUARIUM",
         "address": "2751 CONEY ISLAND AVE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.14939,
-          43.0724
-        ]
-      },
-      "properties": {
-        "name": "CENTRAL NEW YORK AQUARIUM SOCIETY",
-        "address": "923 WADSWORTH ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.72477,
-          40.80051
-        ]
-      },
-      "properties": {
-        "name": "GREATEST CITY AQUARIUM SOCIETY",
-        "address": "58 PLYMOUTH ROAD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.8834,
-          41.85131
-        ]
-      },
-      "properties": {
-        "name": "HUDSON RIVER NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "MARGARET NORRIE STATE PARK"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -73.64222,
-          40.82845
-        ]
-      },
-      "properties": {
-        "name": "NASSAU COUNTY AQUARIUM SOCIETY",
-        "address": "PO BOX 358"
       }
     },
     {
@@ -1182,20 +678,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -84.52812,
-          39.28698
-        ]
-      },
-      "properties": {
-        "name": "GREATER CINCINNATI AQUARIUM SOCIETY",
-        "address": "PO BOX 40477"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -81.70532,
           41.49657
         ]
@@ -1203,34 +685,6 @@
       "properties": {
         "name": "GREATER CLEVELAND AQUARIUM",
         "address": "2000 SYCAMORE ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.12428,
-          41.1016
-        ]
-      },
-      "properties": {
-        "name": "MEDINA COUNTY AQUARIUM SOCIETY",
-        "address": "PO BOX 1485"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -82.51483,
-          41.38276
-        ]
-      },
-      "properties": {
-        "name": "OLD WOMAN CREEK NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "2514 CLEVELAND ROAD"
       }
     },
     {
@@ -1266,48 +720,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -124.22586,
-          43.36387
-        ]
-      },
-      "properties": {
-        "name": "SOUTH SLOUGH NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "61907 SEVEN DEVILS RD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -75.04868,
-          40.38086
-        ]
-      },
-      "properties": {
-        "name": "BUCKS COUNTY AQUARIUM SOCIETY",
-        "address": "PO BOX 130"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.0147,
-          41.25009
-        ]
-      },
-      "properties": {
-        "name": "NORTH CENTRAL PENNSYLVANIA AQUARIUM REEF SOCIETY",
-        "address": "1110 WALNUT STREET"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -79.92113,
           40.4827
         ]
@@ -1329,34 +741,6 @@
       "properties": {
         "name": "NEWPORT EXPLORATION CENTER AQUARIUM",
         "address": "175 MEMORIAL BLVD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -71.56999,
-          41.69122
-        ]
-      },
-      "properties": {
-        "name": "OCEANS AQUARIUM RESEARCH & SCIENCE CENTER",
-        "address": "1260 MAIN ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -81.14641,
-          34.00272
-        ]
-      },
-      "properties": {
-        "name": "COLUMBIA MARINE AQUARIUM CLUB",
-        "address": "101 LANDER DR"
       }
     },
     {
@@ -1462,34 +846,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -97.05902,
-          32.62463
-        ]
-      },
-      "properties": {
-        "name": "DALLAS FORT WORTH MARINE AQUARIUM SOCIETY",
-        "address": "1512 CRESTRIDGE DR"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -96.80535,
-          33.12032
-        ]
-      },
-      "properties": {
-        "name": "DALLAS MARINE AQUARIUM SOCIETY",
-        "address": "PO BOX 851912"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -96.80478,
           32.78322
         ]
@@ -1518,34 +874,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -96.34329,
-          30.64486
-        ]
-      },
-      "properties": {
-        "name": "FEDERATION OF TEXAS AQUARIUM SOCIETIES",
-        "address": "3502 CARTER CREEK PKWY"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -95.40879,
-          29.7506
-        ]
-      },
-      "properties": {
-        "name": "GREATER HOUSTON AQUARIUM CLUB",
-        "address": "1709 BRUN ST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -95.36671,
           29.76457
         ]
@@ -1560,20 +888,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -95.68854,
-          29.5971
-        ]
-      },
-      "properties": {
-        "name": "MARINE AQUARIUM & REEF SOCIETY OF HOUSTON",
-        "address": "223 DARBY TRAILS DRIVE"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -97.04241,
           32.96617
         ]
@@ -1581,20 +895,6 @@
       "properties": {
         "name": "SEA LIFE AQUARIUM - GRAPEVINE",
         "address": "3000 GRAPEVINE MILLS PKWY"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -98.69915,
-          29.46206
-        ]
-      },
-      "properties": {
-        "name": "SEAWORLD SAN ANTONIO",
-        "address": "10500 SEAWORLD DRIVE"
       }
     },
     {
@@ -1630,48 +930,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -112.01346,
-          40.63089
-        ]
-      },
-      "properties": {
-        "name": "WASATCH MARINE AQUARIUM SOCIETY",
-        "address": "6634 SOUTH 5135 WEST"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -76.49879,
-          37.24983
-        ]
-      },
-      "properties": {
-        "name": "CHESAPEAKE BAY VIRGINIA NATIONAL ESTUARINE RESEARCH RESERVE",
-        "address": "7581 SPENCER ROAD"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -77.235,
-          38.87367
-        ]
-      },
-      "properties": {
-        "name": "POTOMAC VALLEY AQUARIUM SOCIETY",
-        "address": "PO BOX 684"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -122.51573,
           47.30119
         ]
@@ -1686,20 +944,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -122.36422,
-          47.31125
-        ]
-      },
-      "properties": {
-        "name": "PUGET SOUND AQUARIUM SOCIETY",
-        "address": "1322 HUDSON STREET"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -122.34233,
           47.60755
         ]
@@ -1707,20 +951,6 @@
       "properties": {
         "name": "SEATTLE AQUARIUM",
         "address": "1438 ALASKAN WAY PIER 5"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -87.94302,
-          44.49313
-        ]
-      },
-      "properties": {
-        "name": "GREEN BAY AQUARIUM SOCIETY",
-        "address": "825 N BAY RIDGE RD"
       }
     }
   ]

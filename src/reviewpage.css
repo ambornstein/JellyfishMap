@@ -1,4 +1,5 @@
 .slide-container {
+  width: 80%;
   margin-top: 30px;
   margin: auto;
 }
@@ -9,13 +10,17 @@
 }
 
 .review-container {
+  width: 60%;
   margin: auto;
   margin-top: 20px;
-  border: 4px solid rgb(35 55 75 / 90%);
+  border: 10px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(41, 132, 218, 0.475);
 }
 
 .review-content {
   margin: auto;
+  width: 70%;
+  padding: 20px 0px;
 }
 
 .review-form {
@@ -59,4 +64,35 @@
   font-size: 20px;
   background: #efefef;
   text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 999px) {
+  .slide-container {
+    width: 90%;
+  }
+
+  .review-content {
+    width: 90%;
+    padding: 5px 0px;
+  }
+
+  .review-container {
+    width: 90%;
+  }
+
+  .review-content {
+    width: 80%;
+  }
+
+  .carousel-wrapper{
+    max-width: 100%;
+  }
+  
+  .carousel {
+    height: 30vh;
+  }
+
+  .each-slide-effect {
+    height: 200px;
+  }
 }

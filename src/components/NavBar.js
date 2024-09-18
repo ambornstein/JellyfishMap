@@ -21,8 +21,9 @@ export default function NavBar() {
     return (
         <div className="nav-container wave">
             <ul>
-                <li><a href="/">Home</a><a href="/about">About</a></li>
-                <li style={{ "float": "right", "display": "flex", "alignItems": "center" }}>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li style={{ "float": "right" }}>
                     {authed ?
                         <>
                             <label>Logged in as theresajyhe@gmail.com</label>

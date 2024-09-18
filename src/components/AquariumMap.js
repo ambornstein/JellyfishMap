@@ -55,7 +55,7 @@ export default function AquariumMap() {
     fetchLocationData().then((feature) => {
       feature.map((feature) => {
         const popup = new mapboxgl.Popup({ offset: 25 }) // add popups
-          .setHTML(`<h3>${feature.properties.name}</h3><p>${feature.properties.address}</p><a href="/pages/${feature._id}">Review</a><Rating/>`)
+          .setHTML(`<p>${feature.properties.name}</h3><p>${feature.properties.address}</p><a href="/pages/${feature._id}">Review</a><Rating/>`)
 
         popup.on('open', async () => {
           const popupContent = popup.getElement().getElementsByClassName("mapboxgl-popup-content")[0];
@@ -85,9 +85,9 @@ export default function AquariumMap() {
 
   return (
     <div className="main-page">
+      <div ref={mapContainer} className="map-container">
       <div className="img-container">
       </div>
-      <div ref={mapContainer} className="map-container">
         <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>

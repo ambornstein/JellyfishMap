@@ -10,7 +10,7 @@ aquariums = df[df["Museum Type"].str.contains("ZOO, AQUARIUM, OR WILDLIFE CONSER
 # Show the dataframe
 #print(df[df["Museum Name"].str.contains("AQUARIUM|SEA|RIVER|MARINE|OCEAN|ESTUAR")])
 #locations = aquariums[~aquariums["Museum Name"].str.contains("MUSEUM|ZOO")]
-aquariums = aquariums[aquariums["Museum Name"].str.contains("AQUARIUM|SEA")]
+aquariums = aquariums[aquariums["Museum Name"].str.contains("AQUARIUM|SEA ") & ~(aquariums["Museum Name"].str.contains("SOCIETY|RESEARCH|SOCIETIES|SEAWORLD|CLUB"))]
 #print(aquariums)
 aquariums.to_csv("aquariums.csv")
 #aquarium_coords = gpd.GeoDataFrame
