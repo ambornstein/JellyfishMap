@@ -1,9 +1,13 @@
-import express from "express";
+import express from "express"
 import cors from "cors";
 import aquariums from "./routes/aquariums.js";
 import reviews from "./routes/reviews.js";
 import upload from "./routes/upload.js"
 import jwt from "jsonwebtoken"
+import functions from "firebase-functions/v2"
+
+import admin from "firebase-admin";
+admin.initializeApp();
 
 
 const port = process.env.PORT || 8080;
@@ -18,9 +22,9 @@ app.use("/reviews", reviews)
 app.use("/upload", upload)
 
 // start the Express server
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server listening on port ${port}`);
+// });
 
 app.post("/login", async (req, res) => {
   console.log(req.query.email)
@@ -67,3 +71,7 @@ app.get('/verify', async (req, res) => {
 app.get('/', (req, res) => {
   res.send('Hello from App Engine!');
 });
+
+const api = functions.https.onRequest(app);
+export default api;
+

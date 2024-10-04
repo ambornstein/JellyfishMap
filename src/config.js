@@ -1,1 +1,1 @@
-export const baseUrl = "https://server-5i7hp45fea-ue.a.run.app";
+export const baseUrl = "https://us-central1-aquarium-jellyfish-ratings.cloudfunctions.net/default";
