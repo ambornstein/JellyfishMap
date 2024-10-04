@@ -2,8 +2,7 @@
   "functions": [
     {
       "source": "functions",
-      "codebase": "default",
-      "host": "127.0.0.1",
+      "codebase": "api",
       "ignore": [
         "node_modules",
         ".git",
