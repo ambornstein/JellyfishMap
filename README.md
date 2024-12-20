@@ -14,4 +14,4 @@ Cloud Image Hosting: Google Cloud Buckets, Multer
 Cloud Deployment: Google Cloud Run  
 
 ## Getting Started
-[Hosted Site](https://jellyfishmap-5i7hp45fea-uc.a.run.app/)
+[Hosted Site](https://thc-aquariumratings.com/)
