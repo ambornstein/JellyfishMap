@@ -200,7 +200,7 @@ ul li a {
 .map-container {
   height: 70vh;
   margin: auto;
-  border: 30px solid rgb(255 255 255 / 0.85);
+  border: 8px solid rgb(60, 93, 125);
   aspect-ratio: 3/2;
 }
 
