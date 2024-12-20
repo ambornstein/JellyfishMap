@@ -27,9 +27,8 @@ h3 {
 }
 
 label {
-
+  font-weight: bold;
   font-size: 28px;
-  color: #9BDCDE;
   width: auto;
 }
 
@@ -199,7 +198,7 @@ ul li a {
 /* Map */
 
 .map-container {
-  width: 50vw;
+  height: 70vh;
   margin: auto;
   border: 30px solid rgb(255 255 255 / 0.85);
   aspect-ratio: 3/2;

@@ -126,8 +126,16 @@ export default function ReviewPage() {
                             <>
                                 <div className="review-form">
                                     <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
-                                    <label>Jellyfish</label><Rating className="rating" isrequired placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating} />
-                                    <label>Quality</label><Rating className="rating" isrequired placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating} />
+                                    <label>Jellyfish</label><Rating className="rating" isrequired
+                                        placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating}
+                                        placeholderSymbol={<img src="/aquariumRatingJelly.gif" width="75px" className='icon'></img>}
+                                        fullSymbol={<img src="/aquariumRatingJelly.gif" width="75px" className='icon'></img>}
+                                        emptySymbol={<img src="/aquariumRatingJelly.gif" style={{"opacity": 0.4}} width="75px" className='icon'></img>}/>
+                                    <label>Quality</label><Rating className="rating" isrequired
+                                        placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating}
+                                        fullSymbol={<img src="/aquariumRatingStar.gif" width="75px" className='icon'></img>}
+                                        placeholderSymbol={<img src="/aquariumRatingStar.gif" width="75px" className='icon'></img>}
+                                        emptySymbol={<img src="/aquariumRatingStar.gif" style={{"opacity": 0.4}} width="75px" className='icon'></img>}/>
                                     <button type="submit">Submit Review</button>
                                 </div>
                             </>

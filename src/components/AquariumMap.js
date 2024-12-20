@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { baseUrl } from '../config';
-import Rating from 'react-rating';
+import { JellyRating, OverallRating } from './JellyRating';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW1ib3Juc3RlaW4iLCJhIjoiY2x3ajhnYjBjMHk1cDJrbXdjZHdqaWZ3cyJ9._K7RJ6SvA6Tg2VtuZjfCig';
 
@@ -68,8 +68,8 @@ export default function AquariumMap() {
                 ratingNode.className = "ratings"
                 //Add ratings from the most recent review
                 ReactDOM.render(<>
-                  <Rating readonly initialRating={reviews[reviews.length - 1].ovrRating} />
-                  <Rating readonly initialRating={reviews[reviews.length - 1].jellyRating} />
+                  <JellyRating readonly rating={reviews[reviews.length - 1].ovrRating} label={false}/>
+                  <OverallRating readonly rating={reviews[reviews.length - 1].jellyRating} label={false}/>
                 </>, ratingNode)
 
                 popupContent.appendChild(ratingNode)
