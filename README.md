@@ -3,6 +3,9 @@ A project created to host reviews of aquariums all over the US. Each aquarium ca
 
 ## Screenshots
 ![aquarium-landing](https://github.com/user-attachments/assets/bf82a256-46da-488a-aee7-d859178a8511)
+![aquarium-landing](https://github.com/user-attachments/assets/1a532ad6-4d5b-422c-a9c2-cfa628913802)
+![review](https://github.com/user-attachments/assets/3eed65ed-fb45-4046-90cf-0cc8c3b6d10b)
+
 ## Technologies Used
 Backend: Express.js, Node.js  
 Frontend: React.js  
