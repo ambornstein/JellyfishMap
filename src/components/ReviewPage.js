@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect } from "react"
 import Rating from "react-rating"
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../config";
@@ -43,20 +43,20 @@ export default function ReviewPage() {
     useEffect(() => {
         const id = params.id?.toString() || undefined;
         if (id) {
-            fetch(`${baseUrl}/aquariums/${(id)}`)
+            fetch(`${baseUrl}/api/aquariums/${(id)}`)
                 .then((res) => res.json()).then((data) => setRecord(data));
 
-            fetch(`${baseUrl}/reviews/${params.id.toString()}`)
+            fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
                 .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
 
-            fetch(`${baseUrl}/upload/${params.id.toString()}`)
+            fetch(`${baseUrl}/api/upload/${params.id.toString()}`)
                 .then((res) => res.json()).then((links) => setBannerLinks(links))
         }
     }, []);
 
     async function onSubmit(e) {
         e.preventDefault();
-        let response = await fetch(`${baseUrl}/reviews/${params.id.toString()}`, {
+        let response = await fetch(`${baseUrl}/api/reviews/${params.id.toString()}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export default function ReviewPage() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        let getReviews = await fetch(`${baseUrl}/reviews/${params.id.toString()}`)
+        let getReviews = await fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
             .then((res) => res.json())
 
         Promise.all([response, getReviews]).then((resolutions) => setReviewList(resolutions[1].flat().reverse()));
@@ -130,12 +130,12 @@ export default function ReviewPage() {
                                         placeholderRating={jellyRating} value={jellyRating} onChange={setJellyRating}
                                         placeholderSymbol={<img src="/aquariumRatingJelly.gif" width="75px" className='icon'></img>}
                                         fullSymbol={<img src="/aquariumRatingJelly.gif" width="75px" className='icon'></img>}
-                                        emptySymbol={<img src="/aquariumRatingJelly.gif" style={{"opacity": 0.4}} width="75px" className='icon'></img>}/>
+                                        emptySymbol={<img src="/aquariumRatingJelly.gif" style={{ "opacity": 0.4 }} width="75px" className='icon'></img>} />
                                     <label>Quality</label><Rating className="rating" isrequired
                                         placeholderRating={ovrRating} value={ovrRating} onChange={setOvrRating}
                                         fullSymbol={<img src="/aquariumRatingStar.gif" width="75px" className='icon'></img>}
                                         placeholderSymbol={<img src="/aquariumRatingStar.gif" width="75px" className='icon'></img>}
-                                        emptySymbol={<img src="/aquariumRatingStar.gif" style={{"opacity": 0.4}} width="75px" className='icon'></img>}/>
+                                        emptySymbol={<img src="/aquariumRatingStar.gif" style={{ "opacity": 0.4 }} width="75px" className='icon'></img>} />
                                     <button type="submit">Submit Review</button>
                                 </div>
                             </>
@@ -144,7 +144,10 @@ export default function ReviewPage() {
                     <div className="reviews">
                         {reviewList.map((review, index) => {
                             const timestamp = new Date(review.timestamp)
-                            return (<Review props={review} key={index} date={timestamp.toString()} />)
+                            return (<div>
+                                <Review props={review} key={index} date={timestamp.toString()} />
+                                {authed && <button>Delete</button>}
+                            </div>)
                         })}
                     </div>
                 </div>

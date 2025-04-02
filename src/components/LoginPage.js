@@ -9,7 +9,7 @@ export default function LoginPage() {
 
     async function submitCreds(e) {
         e.preventDefault();
-        fetch(`${baseUrl}/login?email=${email}&password=${password}`, {
+        fetch(`${baseUrl}/api/login?email=${email}&password=${password}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

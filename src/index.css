@@ -100,6 +100,8 @@ button:hover {
   margin: 30px;
   height: 70px;
   background-color: #273155;
+  color: #9BDCDE;
+  font-size: 28px;
 }
 
 ul {
@@ -112,17 +114,15 @@ ul {
 }
 
 ul li {
-  
   height: inherit;
   float: left;
 }
 
 ul li a {
   height: fit-content;
-  color: #9BDCDE;
-  font-size: 28px;
   display: inline-block;
   padding: 20px 20px;
+  color: #9BDCDE;
   text-decoration: none;
 }
 
@@ -218,6 +218,8 @@ ul li a {
 
 #login {
   float: right;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile Sizing Overrides*/

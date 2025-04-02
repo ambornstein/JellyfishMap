@@ -1,5 +1,4 @@
 import { JellyRating, OverallRating } from "./JellyRating";
-import Rating from 'react-rating';
 
 export default function Review({props, date}) {
     return(

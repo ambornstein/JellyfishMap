@@ -15,7 +15,7 @@ export default function AquariumMap() {
 
   async function fetchLocationData() {
     const response = await fetch(
-      `${baseUrl}/aquariums/`
+      `${baseUrl}/api/aquariums/`
     ).catch((error) => { console.log("Failed to fetch locations") });
     if (!response.ok) {
       const message = `An error has occurred: ${response.statusText}`;
@@ -28,7 +28,7 @@ export default function AquariumMap() {
 
   async function fetchReviewData(id) {
     const response = await fetch(
-      `${baseUrl}/reviews/${id}`
+      `${baseUrl}/api/reviews/${id}`
     ).catch((error) => { console.log("Failed to fetch locations") });
     if (!response.ok) {
       const message = `An error has occurred: ${response.statusText}`;
