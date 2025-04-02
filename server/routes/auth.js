@@ -1,6 +1,8 @@
 import express from "express";
 import jwt from "jsonwebtoken"
 
+import db from "../db/connection.js";
+
 const router = express.Router();
 
 //Authentication

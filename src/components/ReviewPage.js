@@ -22,7 +22,7 @@ export default function ReviewPage() {
         function handleChange() {
             let stored = JSON.parse(localStorage.getItem("userInfo"))
             if (stored) {
-                setAuthed(true)
+                fetch(`${baseUrl}/api/auth/verify/${stored}`).then((res) => setAuthed(res.ok))
             } else {
                 setAuthed(false)
             }
@@ -46,13 +46,17 @@ export default function ReviewPage() {
             fetch(`${baseUrl}/api/aquariums/${(id)}`)
                 .then((res) => res.json()).then((data) => setRecord(data));
 
-            fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
-                .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
+            getReviews()
 
             fetch(`${baseUrl}/api/upload/${params.id.toString()}`)
                 .then((res) => res.json()).then((links) => setBannerLinks(links))
         }
     }, []);
+
+    function getReviews() {
+        fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
+            .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
+    }
 
     async function onSubmit(e) {
         e.preventDefault();
@@ -71,6 +75,10 @@ export default function ReviewPage() {
             .then((res) => res.json())
 
         Promise.all([response, getReviews]).then((resolutions) => setReviewList(resolutions[1].flat().reverse()));
+    }
+
+    function deleteReview(id) {
+        fetch(`${baseUrl}/api/reviews/${id}`, { method: "DELETE" }).then(() => getReviews())
     }
 
     function uploadImage(e) {
@@ -146,7 +154,7 @@ export default function ReviewPage() {
                             const timestamp = new Date(review.timestamp)
                             return (<div>
                                 <Review props={review} key={index} date={timestamp.toString()} />
-                                {authed && <button>Delete</button>}
+                                {authed && <button onClick={() => deleteReview(review._id)}>Delete</button>}
                             </div>)
                         })}
                     </div>
