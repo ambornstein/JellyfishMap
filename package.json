@@ -23,7 +23,7 @@
     "jsonwebtoken": "^9.0.2"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node server/server.js && react-scripts start",
     "dev": "node server/server.js",
     "build": "react-scripts build"
   },

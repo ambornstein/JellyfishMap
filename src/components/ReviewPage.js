@@ -1,36 +1,22 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import Rating from "react-rating"
 import { useParams } from "react-router-dom";
-import { baseUrl } from "../config";
 import Review from "./Review";
 import ImageCarousel from "./ImageCarousel";
 import "../reviewpage.css"
+import { baseUrl } from "../config";
+import { useAuth } from "../hooks/AuthProvider";
 
 export default function ReviewPage() {
+    const { id } = useParams();
+    const auth = useAuth();
 
-    let params = useParams();
     let [ovrRating, setOvrRating] = useState(0)
     let [jellyRating, setJellyRating] = useState(0)
     let [reviewContent, setReviewContent] = useState("")
     let [reviewList, setReviewList] = useState([])
     let [imageFile, setImageFile] = useState();
     let [bannerLinks, setBannerLinks] = useState([])
-
-    let [authed, setAuthed] = useState(false)
-
-    useEffect(() => {
-        function handleChange() {
-            let stored = JSON.parse(localStorage.getItem("userInfo"))
-            if (stored) {
-                fetch(`${baseUrl}/api/auth/verify/${stored}`).then((res) => setAuthed(res.ok))
-            } else {
-                setAuthed(false)
-            }
-        }
-
-        handleChange()
-        window.addEventListener('storage', handleChange)
-    }, [])
 
     let [record, setRecord] = useState({
         _id: "",
@@ -40,27 +26,30 @@ export default function ReviewPage() {
         }
     });
 
-    useEffect(() => {
-        const id = params.id?.toString() || undefined;
+    function setup() {
         if (id) {
-            fetch(`${baseUrl}/api/aquariums/${(id)}`)
+            fetch(`${baseUrl}/api/aquariums/${id}`)
                 .then((res) => res.json()).then((data) => setRecord(data));
 
-            getReviews()
+            fetch(`${baseUrl}/api/upload/${id}`)
+                .then((res) => res.json()).then((links) => setBannerLinks(links));
 
-            fetch(`${baseUrl}/api/upload/${params.id.toString()}`)
-                .then((res) => res.json()).then((links) => setBannerLinks(links))
+            getReviews();
         }
-    }, []);
+    }
+
+    useEffect(() => {
+        setup()
+    }, [])
 
     function getReviews() {
-        fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
+        fetch(`${baseUrl}/api/reviews/${id}`)
             .then((res) => res.json()).then((data) => setReviewList(data.reverse()));
     }
 
     async function onSubmit(e) {
         e.preventDefault();
-        let response = await fetch(`${baseUrl}/api/reviews/${params.id.toString()}`, {
+        let response = await fetch(`${baseUrl}/api/reviews/${id}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -71,7 +60,7 @@ export default function ReviewPage() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        let getReviews = await fetch(`${baseUrl}/api/reviews/${params.id.toString()}`)
+        let getReviews = await fetch(`${baseUrl}/api/reviews/${id}`)
             .then((res) => res.json())
 
         Promise.all([response, getReviews]).then((resolutions) => setReviewList(resolutions[1].flat().reverse()));
@@ -92,12 +81,12 @@ export default function ReviewPage() {
             let formData = new FormData();
             formData.append("imgfile", newFile);
 
-            const upload = fetch(`${baseUrl}/upload/${params.id.toString()}`, {
+            const upload = fetch(`${baseUrl}/upload/${id}`, {
                 method: "POST",
                 body: formData,
             }).then((res) => res.text())
 
-            const getImages = fetch(`${baseUrl}/upload/${params.id.toString()}`)
+            const getImages = fetch(`${baseUrl}/upload/${id}`)
                 .then((res) => res.json())
 
             Promise.all([upload, getImages]).then((out) => {
@@ -120,7 +109,7 @@ export default function ReviewPage() {
             <div className="review-container">
 
                 <div className="review-content">
-                    {authed &&
+                    {auth.authed &&
                         <>
                             <p>Upload aquarium photos</p>
                             <input onChange={handleChange} type="file" name="imgfile" accept="image/jpeg" />
@@ -130,7 +119,7 @@ export default function ReviewPage() {
                     <h2>{record.properties.name}</h2>
                     <h3>{record.properties.address}</h3>
                     <form onSubmit={onSubmit} >
-                        {authed &&
+                        {auth.authed &&
                             <>
                                 <div className="review-form">
                                     <textarea type="text" onChange={(e) => setReviewContent(e.target.value)} />
@@ -154,7 +143,7 @@ export default function ReviewPage() {
                             const timestamp = new Date(review.timestamp)
                             return (<div>
                                 <Review props={review} key={index} date={timestamp.toString()} />
-                                {authed && <button onClick={() => deleteReview(review._id)}>Delete</button>}
+                                {auth.authed && <button onClick={() => deleteReview(review._id)}>Delete</button>}
                             </div>)
                         })}
                     </div>

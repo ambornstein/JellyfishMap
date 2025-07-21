@@ -4,12 +4,12 @@ import ReviewPage from './components/ReviewPage';
 import AquariumMap from './components/AquariumMap';
 import NavBar from './components/NavBar';
 import LoginPopup from './components/LoginPage';
-import React from 'react';
 import './BabyDoll.ttf'
+import AuthProvider from './hooks/AuthProvider';
 
 export default function App() {
   return (
-    <>
+    <AuthProvider>
       <Router>
       <div className='overlay'></div>
         <NavBar/>
@@ -26,6 +26,6 @@ export default function App() {
           />
         </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }

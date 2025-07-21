@@ -1,35 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useAuth } from "../hooks/AuthProvider";
 
 export default function NavBar() {
-
-    let [authed, setAuthed] = useState(false)
-
-    useEffect(() => {
-        function handleChange() {
-            let stored = JSON.parse(localStorage.getItem("userInfo"))
-            if (stored) {
-                setAuthed(true)
-            } else {
-                setAuthed(false)
-            }
-        }
-
-        handleChange()
-        window.addEventListener('storage', handleChange)
-    }, [])
-
+    const auth = useAuth();
+    
     return (
         <div className="nav-container wave">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li id="login">
-                    {authed ?
+                    {auth.authed ?
                         <>
                             <label>Logged in as theresajyhe@gmail.com</label>
                             <button onClick={() => {
-                                localStorage.removeItem("userInfo")
-                                window.dispatchEvent(new Event('storage'))
+                                auth.logOut()
                             }}>Log Out</button>
                         </>
                         : <a href='/login'>Login</a>}
