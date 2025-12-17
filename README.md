@@ -1,4 +1,4 @@
-# Aquarium Review Map
+## About this Project
 A project created to host reviews of aquariums all over the US. Each aquarium can have multiple reviews including overall quality rating and jellyfish exhibit rating, as well as a gallery of user-uploaded photos. The reviews are only posted with permission but available to be viewed publicly by anyone. This site implements a custom JWT authentication mechanism without using any auth frameworks.
 
 <img width="1920" height="918" alt="aquarium-landing" src="https://github.com/user-attachments/assets/fd21a0eb-b1a5-41fe-be7a-e8a44f57340a" />
