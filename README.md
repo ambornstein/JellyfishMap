@@ -6,8 +6,7 @@ A project created to host reviews of aquariums all over the US. Each aquarium ca
 ## Key Features
 * Interactive Map with over 100 aquarium locations in the US
 * JWT User authentication from scratch
-* Ability for verified users to post reviews of aquariums
-* Image uploading for verified users
+* Verified users post reviews and photos of aquariums
 
 ## Tech Stack
 * Backend: Express.js, Node.js
